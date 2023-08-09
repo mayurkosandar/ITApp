@@ -1,0 +1,49 @@
+<html>
+	<head>
+	<title> Icecream & Toppings by kamal </title>
+	<style>
+		* { font-size: 60px; }
+		body{background-image:url(im3.jpg); }
+	</style>
+	<script>
+		function show()
+		{
+			event.preventDefault();
+			let name=document.getElementById("name");
+			let or=document.getElementById("or");
+			let tf=document.getElementById("tf");
+			let cs=document.getElementById("cs");
+			let sp=document.getElementById("sp");
+			let ans=document.getElementById("ans");
+
+			let topping="";
+			if (or.checked) topping += " oreo ";
+			if (tf.checked) topping += " tf ";
+			if (cs.checked) topping += " cs ";
+			if (sp.checked) topping += " sp ";
+
+			let msg = "name " + name.value + " toppings " + topping;
+			ans.innerHTML = msg;
+
+		}
+	
+	</script>
+	</head>
+	<body>
+	<center>
+	<h1> Icecream App </h1>
+	<form onsubmit="show()">
+	<input type="text" placeholder="enter icecream name " id="name"/>
+	<br><br>
+	<input type ="checkbox" id="or"/> oreo
+	<input type ="checkbox" id="tf"/> tf
+	<input type ="checkbox" id="cs"/> cs
+	<input type ="checkbox" id="sp"/> sp
+	<br><br>
+	<input type="submit" value="order"/>
+	</form>
+	<h2 id="ans"></h2>
+	</center>
+	</body>
+</html>
+
